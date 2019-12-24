@@ -1,0 +1,29 @@
+<div class="results container">
+    <h2>Game results</h2>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">X</th>
+                <th scope="col">O</th>
+                <th scope="col">Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let result of results">
+                <th scope="row">{{result.date}}</th>
+                <td>{{result.player1}}</td>
+                <td>{{result.player2}}</td>
+                <td *ngIf="result.result == 'X'">
+                    <span class="badge badge-success">X won</span>
+                </td>
+                <td *ngIf="result.result == 'O'">
+                    <span class="badge badge-info">O won</span>
+                </td>
+                <td *ngIf="result.result == 'T'">
+                    <span class="badge badge-warning">Tie</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

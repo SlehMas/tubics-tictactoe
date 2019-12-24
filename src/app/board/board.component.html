@@ -1,0 +1,43 @@
+<div *ngIf="state != 'GAME_ENDED'" class="player-turn-title">
+    <h1 *ngIf="isPlayer1Turn">{{player1}}'s turn.</h1>
+    <h1 *ngIf="!isPlayer1Turn">{{player2}}'s turn.</h1>
+</div>
+
+<div *ngIf="state == 'GAME_ENDED'" style="margin-bottom: 17px;">
+    <div class="btn-group">
+        <button class="btn btn-success" (click)="restartGame()">
+            <i class="fas fa-undo"></i> Play again
+        </button>
+        <button class="btn btn-danger" (click)="reset()">
+            Start over
+        </button>
+        <a  routerLink="/results" class="btn btn-info">
+            <i class="fa fa-align-justify"></i>
+            Results
+        </a>
+    </div>
+</div>
+
+<div id="strikethrough" [ngClass]="{
+    'hidden': state == 'GAME_STARTED'
+}"></div>
+<table class="board" id="board">
+    <tr>
+        <td (click)="fillCell($event)" id="0"></td>
+        <td (click)="fillCell($event)" id="1"></td>
+        <td (click)="fillCell($event)" id="2"></td>
+    </tr>
+    <tr>
+        <td (click)="fillCell($event)" id="3"></td>
+        <td (click)="fillCell($event)" id="4"></td>
+        <td (click)="fillCell($event)" id="5"></td>
+    </tr>
+    <tr>
+        <td (click)="fillCell($event)" id="6"></td>
+        <td (click)="fillCell($event)" id="7"></td>
+        <td (click)="fillCell($event)" id="8"></td>
+    </tr>
+</table>
+<div *ngIf="state == 'GAME_ENDED'">
+    <h1>{{winner ?  winner + ' Won the game!' : 'Tie!'}}</h1>
+</div>

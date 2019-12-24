@@ -1,0 +1,91 @@
+#strikethrough {
+    width: 475px;
+    background-color: black;
+    height: 7px;
+    position: relative;
+    margin: auto;
+}
+.visible {
+    visibility: visible;
+}
+.hidden {
+    visibility: hidden;
+}
+.strikethrough_0 {
+    top: 136px;
+}
+
+.strikethrough_1 {
+    top: 284px;
+}
+
+.strikethrough_2 {
+    top: 434px;
+}
+.strikethrough_3 {
+    top: 277px;
+    left: -149px;
+    transform: rotate(90deg);
+}
+.strikethrough_4 {
+    top: 277px;
+    left: 1px;
+    transform: rotate(90deg);
+}
+.strikethrough_5 {
+    top: 277px;
+    left: 151px;
+    transform: rotate(90deg);
+}
+.strikethrough_6 {
+    width: 600px !important;
+    top: 287px;
+    left: 1px;
+    transform: rotate(45deg);
+}
+.strikethrough_7 {
+    width: 600px;
+    top: 287px;
+    left: 1px;
+    transform: rotate(-45deg);
+}
+
+.board {
+    margin:  50px auto 22px auto;
+    tr {
+        td {
+            border: 3px solid black;
+            min-width: 150px;
+            height: 150px;
+            cursor: pointer;
+            &:first-child {
+                border-left: 0;
+            }
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+    tr:first-child td {
+        border-top: 0;
+    }
+    tr:last-child td {
+        border-bottom: 0;
+    }
+    .hasX {
+        &::before {
+            font-family: "Helvetica";
+            font-weight: 900;
+            content: "X";
+            font-size: 4em;
+        }
+    }
+    .hasO {
+        &::before {
+            font-family: "Helvetica";
+            font-weight: 900;
+            content: "O"; 
+            font-size: 4.5em;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<div class="container text-center">
+    <div class="idle" *ngIf="state == 'IDLE'">
+        <h1 class="game-title">Tic Tac Toe!</h1>
+        <button class="btn btn-info" (click)="changeState('ENTER_NAMES')">Let's play!</button>
+    </div>
+    <div class="names" *ngIf="state == 'ENTER_NAMES'">
+        <div class="row">
+            <div class="col-md-6 p_select p1">
+                <div class="form-group">
+                    <label for="p_one">Enter name for player 1</label>
+                    <input type="text" class="form-control" name="p_one" [(ngModel)]="player1">
+                </div>
+            </div>
+            <div class="col-md-6 p_select p2">
+                <div class="form-group">
+                    <label for="p_two">Enter name for player 2</label>
+                    <input type="text" class="form-control" name="p_two" [(ngModel)]="player2">
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-info" (click)="changeState('GAME_STARTED')"><i class="fas fa-play"></i> Start</button>
+    </div>
+    <div class="start" *ngIf="state != 'IDLE' && state != 'ENTER_NAMES' ">
+        <app-board [player1]="player1" [player2]="player2">
+        </app-board>
+    </div>
+</div>
