@@ -144,6 +144,6 @@ export class BoardComponent implements OnInit {
       'player1': this.player1,
       'player2': this.player2,
       'result': result
-    }).subscribe(data => {})
+    })
   }
 }
