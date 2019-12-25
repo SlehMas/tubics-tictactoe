@@ -42,15 +42,20 @@ export class BoardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.gameService.state.subscribe(_state => {
-      this.state = _state
-    })
     this.gameService.winner.subscribe(_winner => {
       this.winner = _winner
-      if (this.winner == this.player1) this.saveResults(this.player1)
-      else if (this.winner == this.player1) this.saveResults(this.player1)
-      else {
-        this.saveResults('T')
+    })
+
+    this.gameService.state.subscribe(_state => {
+      this.state = _state
+
+      //save results if game is ended 
+      if (this.state == 'GAME_ENDED') {
+        if (this.winner == this.player1) this.saveResults(this.player1)
+        else if (this.winner == this.player2) this.saveResults(this.player2)
+        else {
+          this.saveResults('T')
+        }
       }
     })
   }
@@ -114,7 +119,7 @@ export class BoardComponent implements OnInit {
     this.cleanBoard()
     this.cellsLeft = 9
   }
-  reset () {
+  reset() {
     this.restartGame()
     this.gameService.changeState('IDLE')
   }
@@ -135,15 +140,14 @@ export class BoardComponent implements OnInit {
     this.gameService.changeState('GAME_ENDED')
   }
 
-  saveResults (result: string) {
+  saveResults(result: string) {
     let date = new Date()
-
     // i did not want to install moment.js
     this.resultsService.saveResults({
       'date': `${date.getMonth() + 1}/${date.getUTCDate()}/${date.getFullYear()}`,
       'player1': this.player1,
       'player2': this.player2,
       'result': result
-    })
+    }).subscribe(d => {})
   }
 }
