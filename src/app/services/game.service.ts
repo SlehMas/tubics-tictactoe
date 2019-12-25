@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class GameService {
 
-    private gameState = new BehaviorSubject('GAME_STARTED')
+    private gameState = new BehaviorSubject('IDLE')
     private _winner = new BehaviorSubject(undefined)
 
     constructor() {
