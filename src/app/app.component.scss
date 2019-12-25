@@ -1,0 +1,9 @@
+@media(max-width: 400px) {
+    .navbar-nav {
+        display: inline-block;
+        display: -webkit-inline-box ;
+       .nav-item {
+            margin-right: 20px;
+        }
+    }
+}

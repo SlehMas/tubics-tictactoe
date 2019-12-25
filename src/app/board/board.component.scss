@@ -89,3 +89,58 @@
         }
     }
 }
+
+@media(max-width: 400px) {
+    #strikethrough {
+        width: 405px;
+    }
+    .strikethrough_0 {
+        width: 326px !important;
+        top: 113px;
+    }
+    
+    .strikethrough_1 {
+        width: 326px !important;
+        top: 234px;
+    }
+    
+    .strikethrough_2 {
+        width: 326px !important;
+        top: 343px;
+    }
+    .strikethrough_3 {
+        top: 220px;
+        left: -149px;
+    }
+    .strikethrough_4 {
+        top: 230px;
+        left: -30px;
+    }
+    .strikethrough_5 {
+        top: 230px;
+        left: 87px;
+    }
+    .strikethrough_6 {
+        width: 405px !important;
+        top: 230px;
+        left: -30px;
+    }
+    .strikethrough_7 {
+        top: 230px;
+        left: -30px;
+    }
+    
+    .player-turn-title {
+        h1 {
+            font-size: 1.5em;
+        }
+    }
+    .board {
+        tr {
+            td {
+                min-width: 115px;
+                height: 115px;
+            }
+        }
+    }       
+}

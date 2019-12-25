@@ -8,4 +8,9 @@
         font-size: 2em;
         min-height: 250px;
     }
+    @media(max-width: 400px) {
+        .p_select {
+            min-height: 150px;
+        }  
+    }
 }
